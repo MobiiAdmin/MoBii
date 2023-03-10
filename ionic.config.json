@@ -1,0 +1,7 @@
+{
+  "name": "MoBii",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
