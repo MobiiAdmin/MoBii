@@ -16,7 +16,15 @@ MoBii is a mobile application developed to repurpose old phones into smart home 
 - Ionic v6
 
 ## Installation:
+1. Download or the clone current repository using the command
 ```Git
 git clone https://github.com/MobiiAdmin/MoBii.git
+```
+2. Run the following commands within the root directory:
+```
 npm install
+```
+3. To run it on web browser
+```
+ionic serve
 ```
