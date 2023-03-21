@@ -1,20 +1,139 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div id="background">
+    <div class="admin" (click)="admin()"></div>
+    <div id="top">
+      <img style='margin-left:5%;'id='logo' src="../../assets/icon/logo.jpg">
+    </div>
+    <div style="display:flex; justify-content: center; height:15%;">
+      <ion-card id="prompt">
+        <p>Please select the following options to continue</p>
+      </ion-card>
+    </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div style="height:60%; padding:5%;">
+      <ion-row class ='row' style="margin-top:10%;">
+        <div *ngIf='adminMode==false' class="card-container">
+        <ion-card  class="card" style="background-color: rgb(174,217,163);" (click)="doorbell()">
+          <ion-icon class='icon' name="notifications-outline"></ion-icon>
+          <p>Doorbell</p>
+        </ion-card>
+        </div>
+        <div class="card-container">
+        <ion-card id='click-trigger'class="card" style="background-color: rgb(240,208,221);">
+          <ion-icon class='icon' name="lock-open-outline"></ion-icon>
+          <p>Unlock</p>
+        </ion-card>
+        <!-- Popover -->
+        <ion-popover trigger="click-trigger" size="cover" [dismissOnSelect]="true">
+          <ng-template>
+            <ion-content class="ion-padding">
+              <ion-list >
+                <ion-item button="true" detail="false" (click)="unlock()">
+                  <ion-label style="white-space: break-spaces;">Face 
+                    Recognition</ion-label>
+                </ion-item>
+                <ion-item button="true" detail="false" (click)="unlock()">
+                  <ion-label>Thumbprint</ion-label>
+                </ion-item>
+                <ion-item button="true" detail="false" (click)="unlock()">
+                  <ion-label>6-Digit Pin</ion-label>
+                </ion-item>
+              </ion-list>
+
+            </ion-content>
+          </ng-template>
+        </ion-popover>
+        </div>
+        <div *ngIf='adminMode'class="card-container">
+          <ion-card id='open-delivery-dialog' class="card" style="background-color: #D9D9D9;">
+            <ion-icon class='icon' name="cube-outline"></ion-icon>
+            <p>Delivery</p>
+          </ion-card>
+
+          <!-- Delivery Modal -->
+          <ion-modal id="example-modal" #modal trigger="open-delivery-dialog">
+            <ng-template>
+              <div class="wrapper">
+                <ion-item fill="outline">
+                  <ion-label position="floating">Enter Parcel Id:</ion-label>
+                  <ion-input></ion-input>
+                </ion-item>
+                <ion-button style='width:60%; margin: 5% auto 0;'expand="block" (click)="modal.dismiss()">Submit</ion-button>
+              </div>
+            </ng-template>
+          </ion-modal>
+        </div>
+      </ion-row>
+      <ion-row class="row">
+        <div class="card-container" *ngIf='adminMode==false'> 
+        <ion-card id='open-custom-dialog' class="card" style="background-color: #FFE4CA">
+          <ion-icon class='icon' name="person-circle-outline"></ion-icon>
+          <p style="text-align: center;">Contact Owners</p>
+        </ion-card>
+
+        <!-- Modal -->
+        <ion-modal id="example-modal" #modal trigger="open-custom-dialog">
+          <ng-template>
+            <div class="wrapper">
+              <h1>Contact List</h1>
+      
+              <ion-list lines="none">
+                <ion-item button="true" detail="false" (click)="modal.dismiss()">
+                  <ion-icon class='person' name="person-circle"></ion-icon>
+                  <ion-label>Lisa</ion-label>
+                  <ion-icon class='call-icon' name="call-outline"></ion-icon>
+                </ion-item>
+                <ion-item button="true" detail="false" (click)="modal.dismiss()">
+                  <ion-icon class='person' name="person-circle"></ion-icon>
+                  <ion-label>Brandon</ion-label>
+                  <ion-icon class='call-icon' name="call-outline"></ion-icon>
+                </ion-item>
+                <ion-item button="true" detail="false" (click)="modal.dismiss()">
+                  <ion-icon class='person' name="person-circle"></ion-icon>
+                  <ion-label>Felix</ion-label>
+                  <ion-icon class='call-icon' name="call-outline"></ion-icon>
+                </ion-item>
+              </ion-list>
+            </div>
+          </ng-template>
+        </ion-modal>
+
+        </div>
+        <div class="card-container" *ngIf='adminMode==false'>
+        <ion-card id='open-delivery-dialog' class="card" style="background-color: #D9D9D9;">
+          <ion-icon class='icon' name="cube-outline"></ion-icon>
+          <p>Delivery</p>
+        </ion-card>
+
+        <!--Delivery Modal -->
+        <ion-modal id="example-modal" #modal trigger="open-delivery-dialog">
+          <ng-template>
+            <div class="wrapper">
+              <ion-item fill="outline">
+                <ion-label position="floating">Enter Parcel Id:</ion-label>
+                <ion-input></ion-input>
+              </ion-item>
+              <ion-button style='width:60%; margin: 5% auto 0;'expand="block" (click)="modal.dismiss()">Submit</ion-button>
+            </div>
+          </ng-template>
+        </ion-modal>
+        </div>
+
+        <div *ngIf='adminMode'class="card-container">
+          <ion-card class="card" style="background-color: #FFD6AF;">
+            <ion-icon class='icon' name="videocam-outline"></ion-icon>
+            <p>Surveillance</p>
+          </ion-card>
+        </div>
+
+        <div *ngIf='adminMode'class="card-container">
+
+        </div >
+
+
+      </ion-row>
+    </div>
+
+
   </div>
 </ion-content>

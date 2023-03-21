@@ -1,27 +1,91 @@
-#container {
-  text-align: center;
+#background{
+  width:100%;
+  height:100%;
+  background-color: #1987CC;
+}
 
+#top{
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    h1{
+      text-align: center;
+      font-family: "Comic Sans MS", "Cursive";
+      font-weight: bold;
+      margin-right:5%;
+    }
+}
+
+#logo{
+  border-radius: 50%;
+  height:80%;
+}
+
+#prompt{
+  background-color: #CCCCCC;
+  border-radius: 20px;
+  width: 90%;
+  display:flex;
+  align-items: center;
+    p{
+      font-size: 3vh;
+      text-align: center;
+      font-family: "Comic Sans MS", "Cursive";
+      color: black;
+    }
+}
+
+.row{
+  height:24vh;
+  display:flex;
+  flex-flow: row;
+  gap:5%;
+  justify-content: space-evenly;
+}
+
+.card{
+  aspect-ratio: 1/1;
+  margin:0;
+  border-radius: 20px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+    p{
+      font-size: 3vh;
+      color:black;
+      margin:0;
+    }
+}
+
+.card:active{
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
+}
+
+.icon{
+  width: 60%;
+  height: 60%;
+  color: black;
+}
+
+.card-container{
+  width:21vh;
+}
+
+.modal{
+  height:70%;
+  position: relative;
+  top:30%;
+}
+
+.admin{
+  display:hidden;
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+  right:0;
+  height: 50px;
+  width:100px;
 }
