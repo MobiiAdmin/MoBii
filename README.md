@@ -14,3 +14,8 @@ MoBii is a mobile application developed to repurpose old phones into smart home 
 - Node.js v16.15.0
 - Angular v15
 - Ionic v6
+
+## Installation:
+```Git
+Git clone https://github.com/MobiiAdmin/MoBii.git
+```
