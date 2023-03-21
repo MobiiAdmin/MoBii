@@ -17,5 +17,6 @@ MoBii is a mobile application developed to repurpose old phones into smart home 
 
 ## Installation:
 ```Git
-Git clone https://github.com/MobiiAdmin/MoBii.git
+git clone https://github.com/MobiiAdmin/MoBii.git
+npm install
 ```
