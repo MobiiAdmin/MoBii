@@ -28,3 +28,6 @@ npm install
 ```
 ionic serve
 ```
+
+## Additional information
+If you have any technical issues, feel free to [contact](mobiiexecutive@gmail.com) us.
